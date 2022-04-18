@@ -1,0 +1,149 @@
+{
+  "root": true,
+  "env": {
+    "es2021": true,
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "NodeJS": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:jest-formatting/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:storybook/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "@html-eslint", "jest", "jest-formatting", "jsdoc", "react", "jsx-a11y", "react-hooks", "tailwindcss", "typescript-sort-keys", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "parser": "@html-eslint/parser",
+      "extends": ["plugin:@html-eslint/recommended"],
+      "rules": {
+        "@html-eslint/indent": "off",
+        "@html-eslint/require-closing-tags": "off",
+        "@html-eslint/no-extra-spacing-attrs": "off",
+        "@html-eslint/element-newline": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx", "*.test.tsx", "*.js"],
+      "parser": "@typescript-eslint/parser",
+      "extends": ["plugin:typescript-sort-keys/recommended", "plugin:@typescript-eslint/recommended"],
+      "plugins": [],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/recommended"]
+    }
+  ],
+  "ignorePatterns": [".eslintrc.json"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "String": false,
+          "Boolean": false,
+          "Number": false,
+          "Symbol": false,
+          "{}": false,
+          "Object": false,
+          "object": false,
+          "Function": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["warn", { "ignoreTypeValueShadow": true }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "no-console": "warn",
+    "no-dupe-keys": "error",
+    "eqeqeq": "warn",
+    "no-inline-comments": "warn",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": ["off"],
+    "no-param-reassign": "off",
+    "no-await-in-loop": "off",
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-labels": "warn",
+    "no-restricted-syntax": "warn",
+    "no-use-before-define": "warn",
+    "no-unused-expressions": "warn",
+    "jsdoc/require-jsdoc": "off",
+    "class-methods-use-this": "off",
+    "camelcase": "warn",
+    "radix": "off",
+    "no-return-await": "warn",
+    "no-nested-ternary": "warn",
+    //"import/no-extraneous-dependencies": "warn",
+    "prefer-destructuring": "off",
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/button-has-type": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/no-array-index-key": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/require-default-props": "warn",
+    "react/prop-types": "warn",
+    "react/jsx-key": "warn",
+    "react/jsx-no-bind": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-a11y/iframe-has-title": "warn",
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-contradicting-classname": "warn",
+    "no-return-assign": "warn",
+    "no-lone-blocks": "warn",
+    "consistent-return": "warn",
+    "array-callback-return": "warn",
+    "no-debugger": "warn",
+    "no-undef": "warn",
+    "prefer-const": "warn"
+  },
+  "settings": {
+    "jsdoc": {
+      "tagNamePreference": {
+        "exports": "export",
+        "export": "exports"
+      }
+    }
+  }
+}
